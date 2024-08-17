@@ -12,5 +12,5 @@
         - Initialize a ts config file with the `npx tsc --init`
 
 - CLI Commands
-    - `npx ts-node basics.js` : Will run the file using the ts-node wrapper
+    - `npx ts-node basics.js`(later changed to `npx ts-node basics.ts`) : Will run the file using the ts-node wrapper
     
