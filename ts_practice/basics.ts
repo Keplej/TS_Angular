@@ -9,7 +9,7 @@ let myNumber: number = 10;
 let myRegex: RegExp = /foo/;
 // The above are showing us how TS uses Types
 
-hasLoggedIn += " Doe"; // The issue is that the Type 'string' is not assignable to type 'boolean'
+userName += " Doe"; // The issue is that the Type 'string' is not assignable to type 'boolean'
 
 console.log(hasLoggedIn)
 
