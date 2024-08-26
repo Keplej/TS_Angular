@@ -61,4 +61,56 @@ function getStringLength(value: any): number {
     return dataLength;
 }
 
-console.log(getStringLength(data));
+// console.log(getStringLength(data));
+
+
+// keyof typeof operators
+// The keyof type operator works with object types to create a string or numeric literal union of its keys.
+function updateProperty<T>(obj: T, key: keyof T, value: any): T {
+    // Your code here
+    obj[key] = value;
+    return obj;
+}
+// console.log(updateProperty({name: "Alice", age: 28}, "name", "Bob"));
+
+// Type Unions and Intersections
+// Intersection types allow you to combine multiple types into one, enabling objects to have properties of all intersected types.
+// Example:
+// type Name = { name: string };
+// type Age = { age: number };
+// type Person = Name & Age;
+
+type Cars = { type: "car", doors: number };
+type Bike = { type: "bike", hasBell: boolean };
+
+type Vehicle = Cars | Bike;
+
+function identifyVehicle(vehicle: Vehicle): string {
+    // Your code here
+    return vehicle.type;
+}
+
+console.log(identifyVehicle({ type: "bike", hasBell: true }));
+
+// Conditional Types
+// Conditional types help in expressing types in relation to other types, particularly in generic types. It has the syntax T extends U ? X : Y.
+
+
+// Enum Type
+// Enums are a way of giving friendly names to sets of numeric values. They can make code more readable and less error-prone
+// Your enum here
+enum Days {Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday}
+
+
+function classifyDay(day: Days): string {
+    switch (day) {
+        case Days.Saturday:
+        case Days.Sunday:
+            return "Weekend";
+        default:
+            return "Weekday";
+    }
+}
+
+console.log(classifyDay(Days.Monday));
+console.log(classifyDay(Days.Saturday));
