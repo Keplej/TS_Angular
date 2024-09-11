@@ -1,6 +1,8 @@
 # TS_Angular
 
 ## Demo Project
+- Important commands
+    - ng generate component <name_here>
 
 ## TS Practice
 - Learning Basic TS through a series called No BS TS
