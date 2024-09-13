@@ -1,0 +1,18 @@
+<div class="column gap-1 wrapper">
+    <img [src]="product.image" alt="product thumbnail">
+    <h2 class="title">{{ product.name }}</h2>
+
+    <!-- Price -->
+    <div class="row gap-05">
+        <span class="price-lable">Price:</span>
+        <span class="price">{{ product.price }}</span>
+    </div>
+
+    <!-- Raiting component -->
+    <!-- Using the rating compoent from primeng -->
+    <p-rating 
+        [(ngModel)]="product.rating"
+        [readonly]="true"
+        iconCancelClass="hidden"
+    />
+</div>

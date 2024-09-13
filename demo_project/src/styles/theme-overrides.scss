@@ -1,0 +1,4 @@
+// we are using a rating system and need to get rid of a hidden element so we create this theme-overrides.scss file for this and import it to the global styles.scss
+.p-rating-cancel-item {
+    display: none;
+}
