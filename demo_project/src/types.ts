@@ -29,6 +29,7 @@ export interface Products {
 
 // app.post("/clothes", (req, res)
 export interface Product {
+    id?: number;
     price: string;
     name: string;
     image: string;
