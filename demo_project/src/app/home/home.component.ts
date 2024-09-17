@@ -94,8 +94,8 @@ export class HomeComponent {
   // Edit product
   editProduct(product: Product, id: number) {
     // console.log(product, "Edit");
-    this.productsService.editProduct(`http://localhost:3000/clothes/${id}`, product).subscribe(
-      {
+    this.productsService
+    .editProduct(`http://localhost:3000/clothes/${id}`, product).subscribe({
         // dealing with data if successful
         next: (data) => {
           console.log(data);
@@ -110,8 +110,9 @@ export class HomeComponent {
 
   deleteProduct(id: number) {
     // console.log(product, "delete");
-    this.productsService.deleteProduct(`http://localhost:3000/clothes/${id}`).subscribe(
-      {
+    this.productsService
+      .deleteProduct(`http://localhost:3000/clothes/${id}`)
+      .subscribe({
         // dealing with data if successful
         next: (data) => {
           console.log(data);
@@ -119,9 +120,8 @@ export class HomeComponent {
         },
         error: (error) => {
           console.log(error);
-        }
-      }
-    );
+        },
+      });
   }
 
   addProduct(product: Product) {

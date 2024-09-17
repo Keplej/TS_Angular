@@ -26,11 +26,11 @@ export class ApiService {
 
   // Put method
   put<T>(url: string, body: Product, options: Options): Observable<T> {
-    return this.httpClient.post<T>(url, body, options) as Observable<T>;
+    return this.httpClient.put<T>(url, body, options) as Observable<T>;
   }
 
   // delete method
   delete<T>(url: string, options: Options): Observable<T> {
-    return this.httpClient.post<T>(url, options) as Observable<T>;
+    return this.httpClient.delete<T>(url, options) as Observable<T>;
   }
 }
