@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { Product, Products } from '../../types';
 import { ProductComponent } from "../components/product/product.component";
 import { CommonModule } from '@angular/common';
-import { PaginatorModule } from 'primeng/paginator';
+import { Paginator, PaginatorModule } from 'primeng/paginator';
 import { EditPopupComponent } from "../components/edit-popup/edit-popup.component";
 import { ButtonModule } from 'primeng/button';
 
@@ -20,6 +20,8 @@ export class HomeComponent {
   constructor(
     private productsService: ProductsService
   ) {}
+
+  @ViewChild('paginator') paginator: Paginator | undefined;
   
   products: Product[] = [];
 
@@ -76,6 +78,10 @@ export class HomeComponent {
     this.fetchProducts(event.page, event.rows);
   }
   
+  // paginator function to keep the paginator updated when new items are being added
+  resetPaginator() {
+    this.paginator?.changePage(0);
+  }
 
   fetchProducts(page: number, perPage: number) {
     this.productsService
@@ -100,6 +106,7 @@ export class HomeComponent {
         next: (data) => {
           console.log(data);
           this.fetchProducts(0, this.rows);
+          this.resetPaginator();
         },
         error: (error) => {
           console.log(error);
@@ -117,6 +124,7 @@ export class HomeComponent {
         next: (data) => {
           console.log(data);
           this.fetchProducts(0, this.rows);
+          this.resetPaginator();
         },
         error: (error) => {
           console.log(error);
@@ -132,6 +140,7 @@ export class HomeComponent {
         next: (data) => {
           console.log(data);
           this.fetchProducts(0, this.rows);
+          this.resetPaginator();
         },
         error: (error) => {
           console.log(error);
